@@ -9,12 +9,7 @@ const Results = ({ correctCount, totalQuestions, message, onRestart }) => {
       <div className="results-card">
         <div className="results-animation">
           {isGoodPerformance ? (
-            <div className="celebration">
-              🎉
-              <div className="particle particle-1">🎊</div>
-              <div className="particle particle-2">🌟</div>
-              <div className="particle particle-3">🏆</div>
-            </div>
+            <div className="celebration">🏆</div>
           ) : (
             <div className="studying">
               📚
@@ -45,35 +40,29 @@ const Results = ({ correctCount, totalQuestions, message, onRestart }) => {
         </div>
 
         <div className="progress-circle">
-          <svg width="120" height="120">
-            <circle
-              cx="60"
-              cy="60"
-              r="50"
-              fill="none"
-              stroke="#e0e0e0"
-              strokeWidth="8"
-            />
-            <circle
-              cx="60"
-              cy="60"
-              r="50"
-              fill="none"
-              stroke={isGoodPerformance ? '#4CAF50' : '#FF9800'}
-              strokeWidth="8"
-              strokeDasharray={`${(percentage / 100) * 314} 314`}
-              transform="rotate(-90 60 60)"
-              style={{ transition: 'stroke-dasharray 1s ease' }}
-            />
-            <text
-              x="60"
-              y="65"
-              textAnchor="middle"
-              className="percentage-text"
-            >
-              {percentage}%
-            </text>
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <g transform="rotate(-90 60 60)">
+              <circle
+                cx="60"
+                cy="60"
+                r="50"
+                fill="none"
+                stroke="#e0e0e0"
+                strokeWidth="8"
+              />
+              <circle
+                cx="60"
+                cy="60"
+                r="50"
+                fill="none"
+                stroke={isGoodPerformance ? '#4CAF50' : '#FF9800'}
+                strokeWidth="8"
+                strokeDasharray={`${(percentage / 100) * 314} 314`}
+                style={{ transition: 'stroke-dasharray 1s ease' }}
+              />
+            </g>
           </svg>
+          <div className="percentage-text">{percentage}%</div>
         </div>
 
         <button className="restart-button" onClick={onRestart}>

@@ -107,6 +107,12 @@ body {
 .number-display {
   display: block;
   font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.difficulty-icon {
+  display: block;
+  font-size: 1.2em;
 }
 
 .selection-info {
@@ -404,27 +410,6 @@ body {
   }
 }
 
-.particle {
-  position: absolute;
-  font-size: 2em;
-  animation: float 3s ease-in-out infinite;
-}
-
-.particle-1 {
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.particle-2 {
-  right: 10%;
-  animation-delay: 0.5s;
-}
-
-.particle-3 {
-  bottom: 0;
-  animation-delay: 1s;
-}
-
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -519,17 +504,26 @@ body {
 .progress-circle {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  align-items: center;
+  margin: 0 auto 30px;
+  position: relative;
+  width: 120px;
+  height: 120px;
 }
 
 .progress-circle svg {
-  transform: rotate(-90deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .percentage-text {
   font-size: 24px;
   font-weight: bold;
-  fill: #667eea;
+  color: #667eea;
+  z-index: 10;
+  text-align: center;
 }
 
 .restart-button {

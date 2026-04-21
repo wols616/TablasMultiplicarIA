@@ -3,6 +3,13 @@ import React, { useState } from 'react';
 const TableSelector = ({ onStart }) => {
   const [selectedTables, setSelectedTables] = useState([]);
 
+  const getDifficultyIcon = (num) => {
+    if (num <= 3) return '😊';
+    if (num <= 6) return '😐';
+    if (num <= 9) return '😰';
+    return '🤯';
+  };
+
   const toggleTable = (table) => {
     if (selectedTables.includes(table)) {
       setSelectedTables(selectedTables.filter(t => t !== table));
@@ -31,8 +38,10 @@ const TableSelector = ({ onStart }) => {
               key={num}
               className={`table-button ${selectedTables.includes(num) ? 'selected' : ''}`}
               onClick={() => toggleTable(num)}
+              title={`Tabla del ${num}`}
             >
               <span className="number-display">{num}</span>
+              <span className="difficulty-icon">{getDifficultyIcon(num)}</span>
             </button>
           ))}
         </div>
