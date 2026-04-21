@@ -66,6 +66,15 @@ body {
   }
 }
 
+@keyframes pulse-number {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 .selector-container h1 {
   font-size: 2.5em;
   color: #667eea;
@@ -117,7 +126,19 @@ body {
   display: block;
   font-size: 2em;
   margin-bottom: 5px;
+  animation: pulse-number 2s ease-in-out infinite;
 }
+
+.table-button:nth-child(1) .number-display { animation-delay: 0.1s; }
+.table-button:nth-child(2) .number-display { animation-delay: 0.3s; }
+.table-button:nth-child(3) .number-display { animation-delay: 0.5s; }
+.table-button:nth-child(4) .number-display { animation-delay: 0.7s; }
+.table-button:nth-child(5) .number-display { animation-delay: 0.9s; }
+.table-button:nth-child(6) .number-display { animation-delay: 1.1s; }
+.table-button:nth-child(7) .number-display { animation-delay: 1.3s; }
+.table-button:nth-child(8) .number-display { animation-delay: 1.5s; }
+.table-button:nth-child(9) .number-display { animation-delay: 1.7s; }
+.table-button:nth-child(10) .number-display { animation-delay: 1.9s; }
 
 .difficulty-icon {
   display: block;
@@ -410,11 +431,11 @@ body {
 
 .results-animation {
   font-size: 5em;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   position: relative;
-  height: 100px;
+  height: 120px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -498,7 +519,7 @@ body {
 
 .results-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-bottom: 30px;
   background: #f8f9fa;

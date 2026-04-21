@@ -10,7 +10,7 @@ const Results = ({ correctCount, totalQuestions, message, onRestart }) => {
       <div className="results-card">
         <div className="results-animation">
           {isGoodPerformance ? (
-            <div className="celebration">🏆</div>
+            <div className="celebration">😄</div>
           ) : (
             <div className="studying">
               📚
@@ -36,7 +36,11 @@ const Results = ({ correctCount, totalQuestions, message, onRestart }) => {
           </div>
           <div className="stat">
             <p className="stat-label">Respuestas Correctas</p>
-            <p className="stat-value">{correctCount}/{totalQuestions}</p>
+            <p className="stat-value">{correctCount}</p>
+          </div>
+          <div className="stat">
+            <p className="stat-label">Respuestas Incorrectas</p>
+            <p className="stat-value error-stat">{totalQuestions - correctCount}</p>
           </div>
         </div>
 
