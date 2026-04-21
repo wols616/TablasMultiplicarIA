@@ -4,10 +4,19 @@ const TableSelector = ({ onStart }) => {
   const [selectedTables, setSelectedTables] = useState([]);
 
   const getDifficultyIcon = (num) => {
-    if (num <= 3) return '😊';
-    if (num <= 6) return '😐';
-    if (num <= 9) return '😰';
-    return '🤯';
+    const animals = {
+      1: '🐭',
+      2: '🐱',
+      3: '🐶',
+      4: '🐰',
+      5: '🦊',
+      6: '🐻',
+      7: '🐼',
+      8: '🦁',
+      9: '🐯',
+      10: '🐉'
+    };
+    return animals[num];
   };
 
   const toggleTable = (table) => {

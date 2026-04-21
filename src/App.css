@@ -57,6 +57,15 @@ body {
   }
 }
 
+@keyframes float-animal {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .selector-container h1 {
   font-size: 2.5em;
   color: #667eea;
@@ -112,8 +121,20 @@ body {
 
 .difficulty-icon {
   display: block;
-  font-size: 1.2em;
+  font-size: 1.32em;
+  animation: float-animal 3s ease-in-out infinite;
 }
+
+.table-button:nth-child(1) .difficulty-icon { animation-delay: 0s; }
+.table-button:nth-child(2) .difficulty-icon { animation-delay: 0.2s; }
+.table-button:nth-child(3) .difficulty-icon { animation-delay: 0.4s; }
+.table-button:nth-child(4) .difficulty-icon { animation-delay: 0.6s; }
+.table-button:nth-child(5) .difficulty-icon { animation-delay: 0.8s; }
+.table-button:nth-child(6) .difficulty-icon { animation-delay: 1s; }
+.table-button:nth-child(7) .difficulty-icon { animation-delay: 1.2s; }
+.table-button:nth-child(8) .difficulty-icon { animation-delay: 1.4s; }
+.table-button:nth-child(9) .difficulty-icon { animation-delay: 1.6s; }
+.table-button:nth-child(10) .difficulty-icon { animation-delay: 1.8s; }
 
 .selection-info {
   text-align: center;
@@ -499,6 +520,10 @@ body {
   font-size: 2em;
   font-weight: bold;
   color: #667eea;
+}
+
+.stat-value.error-stat {
+  color: #FF9800;
 }
 
 .progress-circle {

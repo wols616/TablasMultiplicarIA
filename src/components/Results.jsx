@@ -2,6 +2,7 @@ import React from 'react';
 
 const Results = ({ correctCount, totalQuestions, message, onRestart }) => {
   const percentage = Math.round((correctCount / totalQuestions) * 100);
+  const errorPercentage = 100 - percentage;
   const isGoodPerformance = percentage >= 75;
 
   return (
@@ -26,16 +27,16 @@ const Results = ({ correctCount, totalQuestions, message, onRestart }) => {
 
         <div className="results-stats">
           <div className="stat">
-            <p className="stat-label">Porcentaje</p>
+            <p className="stat-label">Porcentaje de Acierto</p>
             <p className="stat-value">{percentage}%</p>
           </div>
           <div className="stat">
-            <p className="stat-label">Correctas</p>
-            <p className="stat-value">{correctCount}</p>
+            <p className="stat-label">Porcentaje de Error</p>
+            <p className="stat-value error-stat">{errorPercentage}%</p>
           </div>
           <div className="stat">
-            <p className="stat-label">Incorrectas</p>
-            <p className="stat-value">{totalQuestions - correctCount}</p>
+            <p className="stat-label">Respuestas Correctas</p>
+            <p className="stat-value">{correctCount}/{totalQuestions}</p>
           </div>
         </div>
 
